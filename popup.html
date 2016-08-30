@@ -1,0 +1,78 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+	
+	<link rel="stylesheet" type="text/css" href="popup.css">
+	<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+		
+	<!--<script type="text/javascript">
+		var js_handle = $("<div class='js-handle'></div>").appendTo($("body"));
+		var fragments = js_handle.width();
+		js_handle.remove();
+	
+		var loader = $(".loader");
+		for (var i = 0; i < fragments; i++) {
+		  var fragment = $("\
+			<div class='fragment-holder n" + (i + 1) + "'>\
+				<div class='fragment'></div>\
+			</div>");
+		  loader.append(fragment);
+		}
+	</script>-->
+		
+	<script type="text/javascript" src="popup.js"></script> 
+	
+	</head>
+  <body>
+    
+    <div id="main">
+     
+	  
+	  <a target="_blank" href="https://drive.google.com/drive/my-drive" class="PopupBtn">
+	 		<img id="DriveImg" 
+			src="https://lh6.ggpht.com/k7Z4J1IIXXJnC2NRnFfJNlkn7kZge4Zx-Yv5uqYf4222tx74wXDzW24OvOxlcpw0KcQ=w300" />
+	
+		<br/>
+		
+		<span><b>View My Drive</b></span>
+	  </a>
+	  
+	  <div id="ActivateBookmarks" class="PopupBtn">
+ 		<img id="DriveImg" 
+			src="https://lh6.ggpht.com/k7Z4J1IIXXJnC2NRnFfJNlkn7kZge4Zx-Yv5uqYf4222tx74wXDzW24OvOxlcpw0KcQ=w300" />
+	
+		<br/>
+		
+		<span id="ActivateBookmarksTxt">
+			<b>Bookmark My Drive</b>
+		</span>
+	  </div>
+	  
+	  <div id="loader">
+	
+		<div class="boxLoading"></div>
+	    <span id="LoadingMsg">Loading bookmark for your drive contents...</span>
+	  </div>
+	  
+	  
+	  <div id="TryAgainMsg" style="display:none">For this app to work, you must <a id="AuthorizationLink" style="text-decoration:underline">grant it access to your drive account.</a></div>
+	  
+	  <div id="ConfirmationMsg" style="display:none">Success! Check your bookmarks for a folder labeled "My Drive" with all of your Google Drive contents.
+		You can use the shortcut "CTRL-SHIFT-B" to display your bookmark bar at the top of your browser window. 
+	  
+	  <p>Click "Bookmark My Drive" again to update with any files added to your Drive in the future.</div>
+	
+	
+      <div id="BookmarksHTML"></div>
+      
+    </div>
+  </body>
+</html>
+
